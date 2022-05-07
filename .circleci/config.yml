@@ -34,6 +34,7 @@ jobs:
               curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
         - run:
             command: |
+              apet-get install sudo
               sudo apt install unzip
         - run:
             command: |
