@@ -2,8 +2,6 @@ version: 2.1
 commands:
    # Exercise - Rollback
    destroy_environment:
-     docker:
-       - image: amazon/aws-cli
      steps:
        - run:
            name: Destroy environment
@@ -51,7 +49,7 @@ jobs:
       - run:
           name: test job
           command: |
-            URL="https://blog1212.udacity.com/" 
+            URL="https://blog.udacity.com/" 
             # Test if website exists
             if curl -s --head ${URL} 
             then
