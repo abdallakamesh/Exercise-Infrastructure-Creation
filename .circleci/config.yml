@@ -2,6 +2,8 @@ version: 2.1
 commands:
    # Exercise - Rollback
    destroy_environment:
+     docker:
+       - image: amazon/aws-cli
      steps:
        - run:
            name: Destroy environment
@@ -58,6 +60,8 @@ jobs:
               return 1
             fi
       - destroy_environment
+        when: on_fail 
+
 workflows:
   smoke_test-workflow:
     jobs:
