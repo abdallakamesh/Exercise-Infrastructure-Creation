@@ -54,7 +54,7 @@ jobs:
       - run:
           name: test job
           command: |
-            URL="https://blog.udacity.com/" 
+            URL="https://blog12121.udacity.com/" 
             # Test if website exists
             if curl -s --head ${URL} 
             then
@@ -63,10 +63,12 @@ jobs:
               return 1
             fi
       - destroy_environment
-      
+
 workflows:
   smoke_test-workflow:
     jobs:
       #- configure_infrastructure
       - create_infrastructure
-      - smoke_test 
+      - smoke_test: 
+          requires: 
+            - configure_infrastructure
