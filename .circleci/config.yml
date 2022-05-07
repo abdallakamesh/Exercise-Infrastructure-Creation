@@ -30,8 +30,8 @@ jobs:
 #          command: |
 #              ansible-playbook main1.yml -i inventory.txt                
 workflows:
-  configure_infrastructure-workflow:
+  create_infrastructure-workflow:
     jobs:
-      - configure_infrastructure
+      - create_infrastructure
 
 
