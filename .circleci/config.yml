@@ -31,10 +31,14 @@ jobs:
         - run: 
             name: installing aws cli 
             command: |
-              curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+              curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        - run:
+            command: |
               sudo apt install unzip
-              unzip awscli-bundle.zip
-              sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws       
+        - run:
+            command: |
+              unzip awscliv2.zip
+              sudo ./aws/install              
   # Exercise: Config and Deployment
   configure_infrastructure:
     docker:
